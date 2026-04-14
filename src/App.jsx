@@ -501,8 +501,10 @@ export default function App() {
                 </span>
               </span>
             </div>
+
+            {/* Updated Email Link */}
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:gauravchandelkar05@gmail.com"
               className="px-6 py-2 bg-red-600/10 hover:bg-red-600 text-red-500 hover:text-white border border-red-600/50 font-bold text-[10px] tracking-[0.2em] uppercase transition-all duration-300"
             >
               Initiate Link
@@ -510,10 +512,22 @@ export default function App() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 pointer-events-auto">
-            {["GitHub", "LinkedIn"].map((btn) => (
+            {/* Updated GitHub & LinkedIn Links */}
+            {[
+              {
+                name: "GitHub",
+                url: "https://github.com/gauravchandelkar05-wq",
+              },
+              {
+                name: "LinkedIn",
+                url: "https://www.linkedin.com/in/gaurav-c-ba46a2323/",
+              },
+            ].map((btn) => (
               <motion.a
-                key={btn}
-                href="#"
+                key={btn.name}
+                href={btn.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{
                   scale: 1.05,
                   backgroundColor: "#dc2626",
@@ -523,7 +537,7 @@ export default function App() {
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-4 bg-transparent border border-slate-700 text-slate-300 font-bold tracking-[0.2em] text-xs uppercase transition-all duration-300"
               >
-                {btn}
+                {btn.name}
               </motion.a>
             ))}
           </div>
